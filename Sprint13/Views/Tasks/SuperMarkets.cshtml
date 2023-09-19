@@ -1,0 +1,20 @@
+﻿@using Sprint13_Views.Models;
+@{
+	ViewBag.supermarkets = new List<SuperMarkets>()
+	{
+		new SuperMarkets{ Name = "WellMart"},
+		new SuperMarkets{ Name = "Silpo"},
+		new SuperMarkets{ Name = "ATB"},
+		new SuperMarkets{ Name = "Furshet"},
+		new SuperMarkets{ Name = "Metro"}
+	};
+}
+
+<h1>Our supermarkets</h1>
+<h2>There are @ViewBag.superMarkets.Count markets:</h2>
+<ul>
+	@foreach (var supermarket in ViewBag.superMarkets)
+	{
+		<p>@supermarket.Name</p>
+	}
+</ul>

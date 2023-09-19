@@ -1,0 +1,37 @@
+﻿@using Sprint13_Views.Models;
+@using Sprint13_Views.Views.Tasks;
+@{
+    ViewData["Title"] = "ShoppingCart";
+    var superMarkets = ViewBag.supermarkets as List<SuperMarkets>;
+    var products = ViewBag.products as Dictionary<string, double>;
+}
+
+<h1>Your shopping cart</h1>
+<div class="form-group">
+
+    <p>
+        @Html.Label("fullName", "Input your fullname:")<br />
+        @Html.TextBox("fullName")
+    </p>
+    <p>
+        @Html.Label("address", "Input your address:")<br />
+        @Html.TextBox("address")
+    </p>
+    <P>
+        <select name="superMarkets"> id="superMarkets"
+        @foreach (var supermarket in ViewBag.superMarkets)
+        {
+            <option value = "@supermarket.Name">@supermarket.Name</option>
+        }
+        </select>
+
+        <br>
+        <br>
+        <select name="ViewBag.products.Key" size="4">
+        @foreach (var product in ViewBag.products.Keys)
+        {
+            <option value ="product">@product</option>
+        }
+        </select>
+    </P>
+</div>

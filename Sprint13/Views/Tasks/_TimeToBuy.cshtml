@@ -1,0 +1,8 @@
+﻿@using Sprint13_Views.Services;
+@using System.Globalization;
+@inject ITimeService TimeService
+
+<div>
+    <h3>It's time to shopping!</h3>
+    <p>@TimeService.GetTimeForTomorrow().ToString("dd/MM/yy",new CultureInfo("en-US"))</p>
+</div>

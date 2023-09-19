@@ -1,0 +1,33 @@
+﻿@page
+@using Sprint13_Views.Models;
+@model Sprint13_Views.Views.Tasks.ShoppingListModel
+@{
+}
+
+<h1>Our shopping list</h1>
+
+<style>
+	table, th, td{
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+</style>
+<table>
+	<tbody>
+		@foreach (var kvp in ViewBag.productsDictionary)
+		{
+			<tr>
+				<td>
+					@kvp.Key
+				</td>
+				<td>
+					@kvp.Value
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@Html.Partial("_TimeToBuy")
+
+
